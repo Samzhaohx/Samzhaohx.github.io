@@ -3176,8 +3176,8 @@ if (localStorage.getItem("blogbg") != undefined) {
   document.getElementById("defineBg").innerText = `:root{
     --default-bg: url(https://github.com/Samzhaohx/Samzhaohx.github.io/blob/main/assets/beach.jpg?raw=true);
     --darkmode-bg:url(https://github.com/Samzhaohx/Samzhaohx.github.io/blob/main/assets/newyork.jpg?raw=true);
-    --mobileday-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/snow.webp);
-    --mobilenight-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/mb8.webp);
+    --mobileday-bg: urlhttps://github.com/Samzhaohx/Samzhaohx.github.io/blob/main/assets/mobilenewyork.jpg?raw=true);
+    --mobilenight-bg: url(https://github.com/Samzhaohx/Samzhaohx.github.io/blob/main/assets/mobiledarkmoutain.jpg?raw=true);
   }`;
 }
 // 切换背景主函数
