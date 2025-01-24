@@ -1113,14 +1113,14 @@ function changeMouseMode() {
 var now1 = new Date();
 
 function createtime1() {
-  var grt = new Date("08/09/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  var grt = new Date("24/02/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
   now1.setTime(now1.getTime() + 250);
   var days = (now1 - grt) / 1000 / 60 / 60 / 24;
   var dnum = Math.floor(days);
 
   var ascll = [
-    `欢迎来到Fomalhaut🥝の小家!`,
-    `Future is now 🍭🍭🍭`,
+    `欢迎来到mmjのblog!`,
+    `Future is now `,
     `
         
 ███████  ██████  ███    ███  █████  ██      ██   ██  █████  ██    ██ ████████ 
@@ -1172,7 +1172,7 @@ function createtime2() {
   setTimeout(
     console.warn.bind(
       console,
-      "%c ⚡ Powered by Fomalhaut🥝 %c 你正在访问Fomalhaut🥝の小家",
+      "%c ⚡ Powered by mmj %c 你正在访问mmjの小家",
       "color:white; background-color:#f0ad4e",
       ""
     )
@@ -1282,8 +1282,8 @@ function share_() {
   try {
     // 截取标题
     var title = document.title;
-    var subTitle = title.endsWith("| Fomalhaut🥝") ? title.substring(0, title.length - 14) : title;
-    navigator.clipboard.writeText('Fomalhaut🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
+    var subTitle = title.endsWith("| mmj") ? title.substring(0, title.length - 14) : title;
+    navigator.clipboard.writeText('mmj的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！');
     new Vue({
       data: function () {
         this.$notify({
@@ -1325,7 +1325,7 @@ document.addEventListener('visibilitychange', function () {
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = '🐖抓到你啦～';
+    document.title = '抓到你啦～';
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
@@ -2460,7 +2460,7 @@ if (m == 10 && dd <= 3) {//国庆节
 }
 if (m == 8 && dd == 15) {//搞来玩的，小日子投降
   if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("小日子已经投降" + (y - 1945).toString() + "年了😃");
+    Swal.fire("日本已经投降" + (y - 1945).toString() + "年");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
@@ -2485,19 +2485,19 @@ if (m == 4 && dd == 1) {//愚人节，随机谎话
 }
 if (m == 5 && dd == 1) {//劳动节
   if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("劳动节快乐\n为各行各业辛勤工作的人们致敬！");
+    Swal.fire("劳动节快乐\n为各行各业辛勤工作的人们致敬");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
 if (m == 5 && dd == 4) {//青年节
   if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("青年节快乐\n青春不是回忆逝去,而是把握现在！");
+    Swal.fire("青年节快乐\n青春不是回忆逝去,而是把握现在");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
 if (m == 5 && dd == 20) {//520
   if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("今年是520情人节\n快和你喜欢的人一起过吧！💑");
+    Swal.fire("今年是520情人节\n快和你喜欢的人一起过吧~");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
@@ -2521,7 +2521,7 @@ if (m == 12 && dd == 25) {//圣诞节
 }
 if (m == 8 && dd == 11) {//站长生日
   if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！🥝");
+    Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
@@ -2542,7 +2542,7 @@ if ((y == 2023 && m == 4 && dd == 5) || (y == 2024 && m == 4 && dd == 4) || (y =
 }
 if ((y == 2023 && m == 12 && dd == 22) || (y == 2024 && m == 12 && dd == 21) || (y == 2025 && m == 12 && dd == 21)) {//冬至
   if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("冬至快乐\n快吃上一碗热热的汤圆和饺子吧🧆");
+    Swal.fire("冬至快乐\n快吃上一碗热热的汤圆和饺子吧");
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
@@ -2847,7 +2847,7 @@ if (window.localStorage.getItem("fpson") == undefined || window.localStorage.get
     if (now > 1000 + lastTime) {
       var fps = Math.round((frame * 1000) / (now - lastTime));
       if (fps <= 5) {
-        var kd = `<span style="color:#bd0000">卡成ppt🤢</span>`
+        var kd = `<span style="color:#bd0000">卡成ppt！🤢</span>`
       } else if (fps <= 15) {
         var kd = `<span style="color:red">电竞级帧率😖</span>`
       } else if (fps <= 25) {
@@ -2855,9 +2855,9 @@ if (window.localStorage.getItem("fpson") == undefined || window.localStorage.get
       } else if (fps < 35) {
         var kd = `<span style="color:#9338e6">不太流畅🙄</span>`
       } else if (fps <= 45) {
-        var kd = `<span style="color:#08b7e4">还不错哦😁</span>`
+        var kd = `<span style="color:#08b7e4">还不错哦</span>`
       } else {
-        var kd = `<span style="color:#39c5bb">十分流畅🤣</span>`
+        var kd = `<span style="color:#39c5bb">十分流畅</span>`
       }
       document.getElementById("fps").innerHTML = `FPS:${fps} ${kd}`;
       frame = 0;
