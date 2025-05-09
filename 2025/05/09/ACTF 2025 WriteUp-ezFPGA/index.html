@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="mmj">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://samzhaohx.github.io/2025/05/09/actf 2025 writeup-ezfpga/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACTF 2025 WriteUp-ezFPGA">
+<meta property="og:url" content="https://samzhaohx.github.io/2025/05/09/ACTF%202025%20WriteUp-ezFPGA/index.html">
+<meta property="og:site_name" content="mmj&#39;s Blog">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://samzhaohx.github.io/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-05-09T15:26:21.505Z">
+<meta property="article:modified_time" content="2025-04-28T14:57:42.127Z">
+<meta property="article:author" content="mmj">
+<meta property="article:tag" content="逆向">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://samzhaohx.github.io/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/source/assets/head.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/source/assets/head.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/source/assets/head.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            ACTF 2025 WriteUp-ezFPGA | mmj&#39;s Blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        
+<script src="/js/build/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"samzhaohx.github.io","root":"/","language":"zh-CN"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/source/assets/beach.jpg","dark":"/source/assets/newyork.jpg"},"title":"California","subtitle":{"text":["Blooming of Jasmine"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":"/source/assets/QRCode.jpg\""}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Friends":{"icon":"fa-solid fa-link","path":"/links/"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        mmj&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                mmj&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links/"
+                                        >
+                                    <i class="fa-solid fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links/"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-solid fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">ACTF 2025 WriteUp-ezFPGA</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/source/assets/head.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">mmj</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-05-09 23:26:21</span>
+        <span class="mobile">2025-05-09 23:26:21</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-04-28 22:57:42</span>
+            <span class="mobile">2025-04-28 22:57:42</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E9%80%86%E5%90%91/">逆向</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="ACTF-2025-WriteUp-ezFPGA"><a href="#ACTF-2025-WriteUp-ezFPGA" class="headerlink" title="ACTF 2025 WriteUp-ezFPGA"></a>ACTF 2025 WriteUp-ezFPGA</h1><blockquote>
+<p><em>推荐阅读<a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzk0MjU4OTUxMw==&mid=2247487946&idx=1&sn=583a7b0ab5cf7d05d1f123293d080f42&chksm=c33d95d754d55e93f899287daba5dd574772b4dc2ba1b17f7f73da8a710f31d332ab747b08d8&mpshare=1&scene=23&srcid=0428MWPUPXeKtFk60zb7U3Vf&sharer_shareinfo=850756f17271a1942358d05352b3a1ca&sharer_shareinfo_first=19d6257dbc64f82c1608cf9a9e4e5b17#rd" >Nepnep战队wp<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></em></p>
+</blockquote>
+<h2 id="1-获取加密逻辑"><a href="#1-获取加密逻辑" class="headerlink" title="1.获取加密逻辑"></a>1.获取加密逻辑</h2><p>加密逻辑在<code>ezFPGA\src\encryptor.sv</code>文件中，可以将其转为C代码以便于阅读（ai大法）</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdint.h&gt;</span> <span class="comment">// 为了使用 uint8_t</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span> <span class="comment">// 为了使用 memcpy</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义 FLAG 常量 (等同于 Verilog 的 parameter)</span></span><br><span class="line"><span class="comment">// 注意：C 语言不能直接用字符串数组初始化 uint8_t 数组，</span></span><br><span class="line"><span class="comment">// 需要显式转换字符为 ASCII 值。</span></span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> FLAG[<span class="number">14</span>] = &#123;</span><br><span class="line">    <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;T&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;&#123;&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;f&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;&#125;&#x27;</span></span><br><span class="line">    <span class="comment">// 对应 ASCII: 65, 67, 84, 70, 123, 116, 101, 115, 116, 102, 108, 97, 103, 125</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">size_t</span> l = <span class="keyword">sizeof</span>(FLAG) / <span class="keyword">sizeof</span>(FLAG[<span class="number">0</span>]); <span class="comment">// 等同于 $size(FLAG)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义其他常量数组 (等同于 Verilog 的 localparam 或 assign)</span></span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> ab[<span class="number">4</span>] = &#123;<span class="number">11</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">14</span>&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> ad[<span class="number">36</span>] = &#123;</span><br><span class="line">    <span class="number">116</span>, <span class="number">174</span>, <span class="number">193</span>, <span class="number">124</span>, <span class="number">102</span>, <span class="number">100</span>, <span class="number">11</span>, <span class="number">193</span>, <span class="number">115</span>, <span class="number">4</span>, <span class="number">127</span>, <span class="number">139</span>, <span class="number">98</span>, <span class="number">214</span>,</span><br><span class="line">    <span class="number">197</span>, <span class="number">145</span>, <span class="number">97</span>, <span class="number">151</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">117</span>, <span class="number">15</span>, <span class="number">230</span>, <span class="number">179</span>, <span class="number">235</span>, <span class="number">25</span>, <span class="number">244</span>, <span class="number">202</span>,</span><br><span class="line">    <span class="number">73</span>, <span class="number">222</span>, <span class="number">15</span>, <span class="number">191</span>, <span class="number">119</span>, <span class="number">140</span>, <span class="number">94</span>, <span class="number">32</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> db[<span class="number">8</span>] = &#123;<span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;y&#x27;</span>&#125;; <span class="comment">// &quot;eclipsky&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 状态枚举 (等同于 Verilog 的 state_t)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span> &#123;</span> S0, S1, S2, S3, DONE &#125; <span class="type">state_t</span>; <span class="comment">// 添加 DONE 状态用于 C 循环控制</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 模拟 Encryptor 模块行为的函数</span></span><br><span class="line"><span class="comment">// cypher_output 必须是一个至少能容纳 36 个 uint8_t 的数组</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">encryptor_process</span><span class="params">(<span class="type">uint8_t</span> cypher_output[<span class="number">36</span>])</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 内部变量 (等同于 Verilog 的 reg 或 logic)</span></span><br><span class="line">    <span class="type">uint8_t</span> aa[<span class="number">39</span>];</span><br><span class="line">    <span class="type">uint8_t</span> ac[<span class="number">36</span>];</span><br><span class="line">    <span class="type">uint8_t</span> ae[<span class="number">36</span>];</span><br><span class="line">    <span class="type">uint8_t</span> af[<span class="number">36</span>];</span><br><span class="line">    <span class="type">uint8_t</span> ba[<span class="number">256</span>];</span><br><span class="line">    <span class="type">uint8_t</span> ca, cb, cg, da; <span class="comment">// 状态寄存器</span></span><br><span class="line">    <span class="type">uint8_t</span> cd, ce, cf, ch; <span class="comment">// 中间计算值 (组合逻辑)</span></span><br><span class="line"></span><br><span class="line">    <span class="type">state_t</span> state;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- 1. 初始化 aa 数组 ---</span></span><br><span class="line">    <span class="comment">// Verilog 的 generate 块等效于 C 的 for 循环</span></span><br><span class="line">    <span class="type">size_t</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">        aa[i] = FLAG[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = l; i &lt; <span class="number">39</span>; i++) &#123;</span><br><span class="line">        aa[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- 2. 计算 ac 数组 ---</span></span><br><span class="line">    <span class="comment">// Verilog 的 generate 块等效于 C 的 for 循环</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">36</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// C 语言的 uint8_t 会自动处理溢出 (模 256)，与 Verilog 的 logic [7:0] 行为一致</span></span><br><span class="line">        ac[i] = aa[i] * ab[<span class="number">0</span>] + aa[i + <span class="number">1</span>] * ab[<span class="number">1</span>] + aa[i + <span class="number">2</span>] * ab[<span class="number">2</span>] + aa[i + <span class="number">3</span>] * ab[<span class="number">3</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- 3. 计算 ae 数组 ---</span></span><br><span class="line">    <span class="comment">// Verilog 的 generate 块等效于 C 的 for 循环</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">36</span>; i++) &#123;</span><br><span class="line">        <span class="type">size_t</span> row_start = (i / <span class="number">6</span>) * <span class="number">6</span>;</span><br><span class="line">        <span class="type">size_t</span> col = i % <span class="number">6</span>;</span><br><span class="line">        ae[i] = ac[row_start + <span class="number">0</span>] * ad[col + <span class="number">0</span>]  +</span><br><span class="line">                ac[row_start + <span class="number">1</span>] * ad[col + <span class="number">6</span>]  +</span><br><span class="line">                ac[row_start + <span class="number">2</span>] * ad[col + <span class="number">12</span>] +</span><br><span class="line">                ac[row_start + <span class="number">3</span>] * ad[col + <span class="number">18</span>] +</span><br><span class="line">                ac[row_start + <span class="number">4</span>] * ad[col + <span class="number">24</span>] +</span><br><span class="line">                ac[row_start + <span class="number">5</span>] * ad[col + <span class="number">30</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- 4. 状态机模拟 ---</span></span><br><span class="line">    <span class="comment">// 初始化 (等同于 Verilog 的 initial 或 reset)</span></span><br><span class="line">    <span class="comment">// Verilog 的 rst 信号将状态置为 S1，并清零计数器</span></span><br><span class="line">    ca = <span class="number">0</span>;</span><br><span class="line">    cb = <span class="number">0</span>;</span><br><span class="line">    cg = <span class="number">0</span>;</span><br><span class="line">    da = <span class="number">0</span>; <span class="comment">// Verilog 中 da 在 S1 和 S2 中用作循环计数器，复位为 0</span></span><br><span class="line">    state = S1; <span class="comment">// 直接从 S1 开始，因为 Verilog 的复位逻辑如此</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化 ba 数组（虽然 S0 被跳过，但 KSA 需要一个初始状态）</span></span><br><span class="line">    <span class="comment">// 标准 RC4 KSA 从 ba[i] = i 开始，这里也这样做</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">256</span>; i++) &#123;</span><br><span class="line">         ba[i] = (<span class="type">uint8_t</span>)i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 状态机执行循环</span></span><br><span class="line">    <span class="comment">// 在 C 中，我们不需要模拟时钟，可以直接按顺序执行状态逻辑</span></span><br><span class="line">    <span class="comment">// 直到完成所有计算</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- 状态 S1: KSA (密钥调度) ---</span></span><br><span class="line">    <span class="keyword">if</span> (state == S1) &#123;</span><br><span class="line">        <span class="comment">// printf(&quot;进入状态 S1 (KSA)\n&quot;);</span></span><br><span class="line">        cg = <span class="number">0</span>; <span class="comment">// 确保 cg 从 0 开始用于 KSA</span></span><br><span class="line">        <span class="keyword">for</span> (da = <span class="number">0</span>; ; da++) &#123; <span class="comment">// 使用 da 作为循环变量，模拟 Verilog 中的行为</span></span><br><span class="line">            ch = cg + ba[da] + db[da % <span class="number">8</span>];</span><br><span class="line">            <span class="comment">// 交换 ba[da] 和 ba[ch]</span></span><br><span class="line">            <span class="type">uint8_t</span> temp = ba[da];</span><br><span class="line">            ba[da] = ba[ch];</span><br><span class="line">            ba[ch] = temp;</span><br><span class="line">            cg = ch;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (da == <span class="number">255</span>) <span class="keyword">break</span>; <span class="comment">// 完成循环</span></span><br><span class="line">        &#125;</span><br><span class="line">        da = <span class="number">0</span>; <span class="comment">// 重置 da 用于下一个状态</span></span><br><span class="line">        state = S2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- 状态 S2: PRGA 与混合 ---</span></span><br><span class="line">    <span class="keyword">if</span> (state == S2) &#123;</span><br><span class="line">       <span class="comment">// printf(&quot;进入状态 S2 (PRGA &amp; Mix)\n&quot;);</span></span><br><span class="line">       ca = <span class="number">0</span>; <span class="comment">// 确保 ca, cb 从 0 开始用于 PRGA</span></span><br><span class="line">       cb = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (da = <span class="number">0</span>; da &lt; <span class="number">36</span>; da++) &#123; <span class="comment">// 使用 da 作为循环变量</span></span><br><span class="line">            cd = ca + <span class="number">1</span>;</span><br><span class="line">            ce = cb + ba[cd];</span><br><span class="line">            <span class="comment">// 交换 ba[cd] 和 ba[ce]</span></span><br><span class="line">            <span class="type">uint8_t</span> temp = ba[cd];</span><br><span class="line">            ba[cd] = ba[ce];</span><br><span class="line">            ba[ce] = temp;</span><br><span class="line">            cf = ba[cd] + ba[ce];</span><br><span class="line">            af[da] = ba[cf] + ae[da]; <span class="comment">// 混合</span></span><br><span class="line">            ca = cd;</span><br><span class="line">            cb = ce;</span><br><span class="line">        &#125;</span><br><span class="line">        da = <span class="number">0</span>; <span class="comment">// 重置 da 用于下一个状态</span></span><br><span class="line">        state = S3;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// --- 状态 S3: 输出 ---</span></span><br><span class="line">    <span class="keyword">if</span> (state == S3) &#123;</span><br><span class="line">        <span class="comment">// printf(&quot;进入状态 S3 (Output)\n&quot;);</span></span><br><span class="line">        <span class="keyword">for</span> (da = <span class="number">0</span>; da &lt; <span class="number">36</span>; da++) &#123; <span class="comment">// 使用 da 作为循环变量</span></span><br><span class="line">            cypher_output[da] = af[da];</span><br><span class="line">            <span class="comment">// Verilog 模块会在 da=36 时将 cypher 输出 0，</span></span><br><span class="line">            <span class="comment">// 但在 C 中，我们通常只关心生成的 36 个字节。</span></span><br><span class="line">        &#125;</span><br><span class="line">        state = DONE; <span class="comment">// 标记处理完成</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --- 主函数 (用于测试) ---</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">uint8_t</span> final_cypher[<span class="number">36</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;原始 FLAG: &quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; l; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, FLAG[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; (ASCII: &quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; l; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, FLAG[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;)\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 调用加密处理函数</span></span><br><span class="line">    encryptor_process(final_cypher);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;生成的 Cypher (36 字节):\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">36</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%02X &quot;</span>, final_cypher[i]); <span class="comment">// 以十六进制格式打印</span></span><br><span class="line">        <span class="keyword">if</span> ((i + <span class="number">1</span>) % <span class="number">16</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="number">36</span> % <span class="number">16</span> != <span class="number">0</span>) &#123;</span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>总结为：</p>
+<ul>
+<li>初始化 <code>aa</code> 数组: 使用输入的 <code>FLAG</code> 参数填充 <code>aa</code> 数组的前 <code>l</code> 个元素，其余用 0 填充</li>
+<li>线性变换 1 (<code>aa</code> 到 <code>ac</code>): 使用系数 <code>ab</code> 进行滑动窗口计算</li>
+<li>线性变换 2 (<code>ac</code> 到 <code>ae</code>): 使用系数 <code>ad</code> 进行更复杂的基于块的变换</li>
+<li>类 RC4 :<ul>
+<li>KSA 使用密钥 <code>db = &quot;eclipsky&quot;</code> 打乱数组 <code>ba</code></li>
+<li>伪随机生成一个密钥流 <code>k</code></li>
+<li>混合为<code>密文[i] = 密钥流[i] + ae[i]</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-获取密文"><a href="#2-获取密文" class="headerlink" title="2.获取密文"></a>2.获取密文</h2><p>密文也就是<code>af</code></p>
+<p>可以在Linux中用<code>make wave</code>等命令打开GTKWave，查看cypher信号的值，但是只能一个个显示，非常不方便</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../assets/post/Actf_wp/image.png"
+                      alt="image.png"
+                ></p>
+<p>这里推荐在VScode中安装插件WaveTrace，将.vcd文件拖入其中即可查看</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../assets/post/Actf_wp/image%201.png"
+                      alt="image.png"
+                ></p>
+<p>得到密文：</p>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ad <span class="number">00</span> c0 <span class="number">9f</span> <span class="number">16</span> <span class="number">17</span> ec <span class="number">25</span> <span class="number">25</span> <span class="number">1f</span> <span class="number">12</span> e2 <span class="number">7f</span> <span class="number">9f</span> <span class="number">37</span> <span class="number">53</span></span><br><span class="line"><span class="number">12</span> ba <span class="number">8</span>d <span class="number">38</span> <span class="number">60</span> <span class="number">14</span> <span class="number">1b</span> <span class="number">31</span> <span class="number">8</span>e <span class="number">13</span> e2 <span class="number">56</span> <span class="number">0</span>a <span class="number">1</span>a <span class="number">25</span> b9</span><br><span class="line"><span class="number">80</span> <span class="number">73</span> <span class="number">8</span>a <span class="number">60</span></span><br></pre></td></tr></table></figure></div>
+
+<p>（”25“占了两格长度，所以为两个数据）</p>
+<h2 id="3-求解RC4"><a href="#3-求解RC4" class="headerlink" title="3.求解RC4"></a>3.求解RC4</h2><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">uint8_t</span> ba[<span class="number">256</span>];</span><br><span class="line"><span class="type">uint8_t</span> db[<span class="number">8</span>] = &#123;<span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;y&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化ba</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">init_ba</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">256</span>; i++) &#123;</span><br><span class="line">        ba[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">uint8_t</span> cg = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">256</span>; i++) &#123;</span><br><span class="line">        <span class="type">uint8_t</span> ch = (cg + ba[i] + db[i % <span class="number">8</span>]) &amp; <span class="number">0xFF</span>;</span><br><span class="line">        <span class="type">uint8_t</span> tmp = ba[i];</span><br><span class="line">        ba[i] = ba[ch];</span><br><span class="line">        ba[ch] = tmp;</span><br><span class="line">        cg = ch;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    init_ba();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 密文</span></span><br><span class="line">    <span class="type">uint8_t</span> cipher[<span class="number">36</span>] = &#123;</span><br><span class="line">        <span class="number">0xad</span>,<span class="number">0x00</span>,<span class="number">0xc0</span>,<span class="number">0x9f</span>,<span class="number">0x16</span>,<span class="number">0x17</span>,<span class="number">0xec</span>,<span class="number">0x25</span>,<span class="number">0x25</span>,<span class="number">0x1f</span>,<span class="number">0x12</span>,<span class="number">0xe2</span>,<span class="number">0x7f</span>,<span class="number">0x9f</span>,<span class="number">0x37</span>,<span class="number">0x53</span>,</span><br><span class="line">        <span class="number">0x12</span>,<span class="number">0xba</span>,<span class="number">0x8d</span>,<span class="number">0x38</span>,<span class="number">0x60</span>,<span class="number">0x14</span>,<span class="number">0x1b</span>,<span class="number">0x31</span>,<span class="number">0x8e</span>,<span class="number">0x13</span>,<span class="number">0xe2</span>,<span class="number">0x56</span>,<span class="number">0x0a</span>,<span class="number">0x1a</span>,<span class="number">0x25</span>,<span class="number">0xb9</span>,</span><br><span class="line">        <span class="number">0x80</span>,<span class="number">0x73</span>,<span class="number">0x8a</span>,<span class="number">0x60</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="type">uint8_t</span> ae[<span class="number">36</span>];</span><br><span class="line"></span><br><span class="line">    <span class="type">uint8_t</span> ca = <span class="number">0</span>, cb = <span class="number">0</span>, da = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">36</span>; i++) &#123;</span><br><span class="line">        <span class="type">uint8_t</span> cd = (ca + <span class="number">1</span>) &amp; <span class="number">0xFF</span>;</span><br><span class="line">        <span class="type">uint8_t</span> ce = (cb + ba[cd]) &amp; <span class="number">0xFF</span>;</span><br><span class="line">        <span class="type">uint8_t</span> cf = (ba[cd] + ba[ce]) &amp; <span class="number">0xFF</span>;</span><br><span class="line"></span><br><span class="line">        ae[i] = (cipher[i] - ba[cf]) &amp; <span class="number">0xFF</span>;</span><br><span class="line"></span><br><span class="line">        ca = cd;</span><br><span class="line">        cb = ce;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出为数组</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Recovered ae:\n[&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">36</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ae[i]);</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">35</span>) <span class="built_in">printf</span>(<span class="string">&quot;, &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;]\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Recovered ae:</span><br><span class="line">[<span class="number">107</span>, <span class="number">1</span>, <span class="number">191</span>, <span class="number">109</span>, <span class="number">188</span>, <span class="number">22</span>, <span class="number">73</span>, <span class="number">145</span>, <span class="number">243</span>, <span class="number">235</span>, <span class="number">253</span>, <span class="number">113</span>, <span class="number">68</span>, <span class="number">240</span>, <span class="number">157</span>, <span class="number">197</span>, <span class="number">4</span>, <span class="number">138</span>, <span class="number">132</span>, <span class="number">231</span>, <span class="number">93</span>, <span class="number">183</span>, <span class="number">108</span>, <span class="number">227</span>, <span class="number">116</span>, <span class="number">255</span>, <span class="number">192</span>, <span class="number">7</span>, <span class="number">122</span>, <span class="number">68</span>, <span class="number">218</span>, <span class="number">197</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">60</span>, <span class="number">120</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="4-求解flag"><a href="#4-求解flag" class="headerlink" title="4.求解flag"></a>4.求解flag</h2><p>剩余部分我们可以使用z3约束求解，在这里可能会遇到一个问题，就是python默认是32位加法，而 Verilog 是 8位加法（自动取模256），所以记得每一步都强制 <code>&amp; 0xFF</code></p>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> z3 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个长度为 39 的 BitVec 数组，每个 BitVec 为 8 位</span></span><br><span class="line">ANS = [BitVec(<span class="string">&quot;ANS%.2d&quot;</span>%i,<span class="number">8</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">39</span>)]</span><br><span class="line"></span><br><span class="line">s = Solver()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 FLAG 的前5个字符为ACTF&#123;</span></span><br><span class="line">s.add(ANS[<span class="number">0</span>] == <span class="number">0x41</span>)  <span class="comment"># &#x27;A&#x27;</span></span><br><span class="line">s.add(ANS[<span class="number">1</span>] == <span class="number">0x43</span>)  <span class="comment"># &#x27;C&#x27;</span></span><br><span class="line">s.add(ANS[<span class="number">2</span>] == <span class="number">0x54</span>)  <span class="comment"># &#x27;T&#x27;</span></span><br><span class="line">s.add(ANS[<span class="number">3</span>] == <span class="number">0x46</span>)  <span class="comment"># &#x27;F&#x27;</span></span><br><span class="line">s.add(ANS[<span class="number">4</span>] == <span class="number">0x7B</span>)  <span class="comment"># &#x27;&#123;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 限制其余字符是可打印字符或者0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>,<span class="number">39</span>):</span><br><span class="line">    s.add(Or(ULE(ANS[i],<span class="number">0x7e</span>), ANS[i] == <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">ab = [<span class="number">11</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">14</span>]</span><br><span class="line">AC = [BitVec(<span class="string">&quot;AC%.2d&quot;</span>%i,<span class="number">8</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">36</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算AC[i]</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">36</span>):</span><br><span class="line">    s.add(AC[i] == ANS[i + <span class="number">0</span>] * ab[<span class="number">0</span>] + ANS[i + <span class="number">1</span>] * ab[<span class="number">1</span>] + ANS[i + <span class="number">2</span>] * ab[<span class="number">2</span>] + ANS[i + <span class="number">3</span>] * ab[<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 填写之前rc4解出来的AE数组值</span></span><br><span class="line">AE_ANS = [</span><br><span class="line">				<span class="number">107</span>, <span class="number">1</span>, <span class="number">191</span>, <span class="number">109</span>, <span class="number">188</span>, <span class="number">22</span>, <span class="number">73</span>, <span class="number">145</span>, <span class="number">243</span>, <span class="number">235</span>, <span class="number">253</span>, <span class="number">113</span>,</span><br><span class="line">				<span class="number">68</span>, <span class="number">240</span>, <span class="number">157</span>, <span class="number">197</span>, <span class="number">4</span>, <span class="number">138</span>, <span class="number">132</span>, <span class="number">231</span>, <span class="number">93</span>, <span class="number">183</span>, <span class="number">108</span>, <span class="number">227</span>, </span><br><span class="line">				<span class="number">116</span>, <span class="number">255</span>, <span class="number">192</span>, <span class="number">7</span>, <span class="number">122</span>, <span class="number">68</span>, <span class="number">218</span>, <span class="number">197</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">60</span>, <span class="number">120</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算 AE[i] 值，注意每次累加时都要取模 0xFF</span></span><br><span class="line">AE = [BitVecVal(<span class="number">0</span>,<span class="number">8</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">36</span>)]</span><br><span class="line">AD = [</span><br><span class="line">    <span class="number">116</span>,<span class="number">174</span>,<span class="number">193</span>,<span class="number">124</span>,<span class="number">102</span>,<span class="number">100</span>,<span class="number">11</span>,<span class="number">193</span>,<span class="number">115</span>,<span class="number">4</span>,<span class="number">127</span>,<span class="number">139</span>,</span><br><span class="line">    <span class="number">98</span>,<span class="number">214</span>,<span class="number">197</span>,<span class="number">145</span>,<span class="number">97</span>,<span class="number">151</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">117</span>,<span class="number">15</span>,<span class="number">230</span>,<span class="number">179</span>,</span><br><span class="line">    <span class="number">235</span>,<span class="number">25</span>,<span class="number">244</span>,<span class="number">202</span>,<span class="number">73</span>,<span class="number">222</span>,<span class="number">15</span>,<span class="number">191</span>,<span class="number">119</span>,<span class="number">140</span>,<span class="number">94</span>,<span class="number">32</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置AE数组的约束</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">36</span>):</span><br><span class="line">    term = BitVecVal(<span class="number">0</span>, <span class="number">8</span>)</span><br><span class="line">    block = i // <span class="number">6</span></span><br><span class="line">    pos = i % <span class="number">6</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">6</span>):</span><br><span class="line">        term = (term + AC[block*<span class="number">6</span> + j] * AD[pos + j*<span class="number">6</span>]) &amp; <span class="number">0xFF</span></span><br><span class="line">    s.add(term == AE_ANS[i])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 求解</span></span><br><span class="line"><span class="keyword">if</span> s.check() == sat:</span><br><span class="line">    m = s.model()</span><br><span class="line">    flag = <span class="string">&#x27;&#x27;</span>.join([<span class="built_in">chr</span>(m.<span class="built_in">eval</span>(ANS[i]).as_long()) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">39</span>)])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Recovered FLAG: <span class="subst">&#123;flag&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No solution found&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Recovered FLAG: ACTF&#123;RC4_4nd_FPGA_w4lk_1nt0_4_b4r&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这道题我本来的方向是偏了，转去研究FPGA的硬件知识了，后来也是在提取密文的部分因为工具（vsc插件）的问题导致了进度缓慢，总之一道题让我学到了很多</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> ACTF 2025 WriteUp-ezFPGA</li>
+        <li><strong>作者:</strong> mmj</li>
+        <li><strong>创建于
+                :</strong> 2025-05-09 23:26:21</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-04-28 22:57:42
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://samzhaohx.github.io/2025/05/09/ACTF 2025 WriteUp-ezFPGA/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E9%80%86%E5%90%91/">#逆向</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/05/09/Frida%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Frida使用笔记</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2025/05/09/2025-2-10-hgame%20wp/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">hgame week1 writeup</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">ACTF 2025 WriteUp-ezFPGA</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ACTF-2025-WriteUp-ezFPGA"><span class="nav-text">ACTF 2025 WriteUp-ezFPGA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96%E5%8A%A0%E5%AF%86%E9%80%BB%E8%BE%91"><span class="nav-text">1.获取加密逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%8E%B7%E5%8F%96%E5%AF%86%E6%96%87"><span class="nav-text">2.获取密文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B1%82%E8%A7%A3RC4"><span class="nav-text">3.求解RC4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B1%82%E8%A7%A3flag"><span class="nav-text">4.求解flag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">mmj</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 6 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
