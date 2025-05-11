@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://samzhaohx.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-05-09T15:26:21.505Z">
-<meta property="article:modified_time" content="2025-05-11T15:18:14.113Z">
+<meta property="article:modified_time" content="2025-05-11T15:36:36.735Z">
 <meta property="article:author" content="mmj">
 <meta property="article:tag" content="逆向">
 <meta name="twitter:card" content="summary">
@@ -455,8 +455,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-05-11 23:18:14</span>
-            <span class="mobile">2025-05-11 23:18:14</span>
+            <span class="desktop">2025-05-11 23:36:36</span>
+            <span class="mobile">2025-05-11 23:36:36</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -494,7 +494,9 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h1 id="ACTF-2025-WriteUp-ezFPGA"><a href="#ACTF-2025-WriteUp-ezFPGA" class="headerlink" title="ACTF 2025 WriteUp-ezFPGA"></a>ACTF 2025 WriteUp-ezFPGA</h1><blockquote>
+			<!-- # ACTF 2025 WriteUp-ezFPGA -->
+
+<blockquote>
 <p><em>推荐阅读<a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzk0MjU4OTUxMw==&mid=2247487946&idx=1&sn=583a7b0ab5cf7d05d1f123293d080f42&chksm=c33d95d754d55e93f899287daba5dd574772b4dc2ba1b17f7f73da8a710f31d332ab747b08d8&mpshare=1&scene=23&srcid=0428MWPUPXeKtFk60zb7U3Vf&sharer_shareinfo=850756f17271a1942358d05352b3a1ca&sharer_shareinfo_first=19d6257dbc64f82c1608cf9a9e4e5b17#rd" >Nepnep战队wp<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></em></p>
 </blockquote>
 <h2 id="1-获取加密逻辑"><a href="#1-获取加密逻辑" class="headerlink" title="1.获取加密逻辑"></a>1.获取加密逻辑</h2><p>加密逻辑在<code>ezFPGA\src\encryptor.sv</code>文件中，可以将其转为C代码以便于阅读（ai大法）</p>
@@ -555,7 +557,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2025-05-11 23:18:14
+                    :</strong> 2025-05-11 23:36:36
             </li>
         
         <li>
@@ -673,7 +675,7 @@
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
 		<div class="page-title">ACTF 2025 WriteUp-ezFPGA</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ACTF-2025-WriteUp-ezFPGA"><span class="nav-text">ACTF 2025 WriteUp-ezFPGA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96%E5%8A%A0%E5%AF%86%E9%80%BB%E8%BE%91"><span class="nav-text">1.获取加密逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%8E%B7%E5%8F%96%E5%AF%86%E6%96%87"><span class="nav-text">2.获取密文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B1%82%E8%A7%A3RC4"><span class="nav-text">3.求解RC4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B1%82%E8%A7%A3flag"><span class="nav-text">4.求解flag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96%E5%8A%A0%E5%AF%86%E9%80%BB%E8%BE%91"><span class="nav-text">1.获取加密逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%8E%B7%E5%8F%96%E5%AF%86%E6%96%87"><span class="nav-text">2.获取密文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%B1%82%E8%A7%A3RC4"><span class="nav-text">3.求解RC4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B1%82%E8%A7%A3flag"><span class="nav-text">4.求解flag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
 
 	</div>
 </div>
